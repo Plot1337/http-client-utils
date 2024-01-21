@@ -2,11 +2,11 @@
 
 namespace HttpClientUtils;
 
-internal class FormUrlEncodedContent
+internal class XFormUrlEncodedContent
 {
     private readonly List<KeyValuePair<string, string>> formData;
 
-    public FormUrlEncodedContent()
+    public XFormUrlEncodedContent()
     {
         formData = [];
     }
@@ -15,6 +15,10 @@ internal class FormUrlEncodedContent
 
     public HttpContent ToFormUrlEncodedContent()
     {
+        var x = new FormUrlEncodedContent();
+
+
+
         StringBuilder builder = new();
 
         for (int i = 0; i < formData.Count; i++)
